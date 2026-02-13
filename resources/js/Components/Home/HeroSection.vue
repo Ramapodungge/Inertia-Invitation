@@ -11,7 +11,7 @@
 
       <!-- Countdown Cards -->
       <div id="countdown" class="flex justify-center lg:space-x-6 mt-6 mb-10"></div>
-      <Link href="/" class="px-5 py-3 bg-amber-50 text-pink-400 font-semibold rounded-xl hover:bg-pink-400 hover:text-amber-50">Lihat Undagan</Link>
+      <Link href="/home/section" class="px-5 py-3 bg-amber-50 text-pink-400 font-semibold rounded-xl hover:bg-pink-400 hover:text-amber-50">Lihat Undagan</Link>
     </main>
   </div>
 </template>
