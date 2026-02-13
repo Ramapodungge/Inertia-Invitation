@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    --pink: #f14e95;
+    --bg: #0a0a0a;
+
+    --shadow: 0 2px 2px rgb(0, 0, 0, /0.5);
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    overflow-x: hidden;
+}
+.font-dancing {
+    font-family: "Dancing Script", cursive;
+}
+.bg-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2c2b9' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.card-shadow {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.floral-border {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath d='M0,10 Q25,5 50,10 T100,10' stroke='%23e2c2b9' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: center;
+}
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.music-toggle {
+    transition: all 0.3s ease;
+}
+.music-toggle:hover {
+    transform: scale(1.1);
+}
+/* my style */
+
+#countdown .simply-section {
+    /* Memberikan styling pada card yang sudah ada */
+    background-color: var(--pink);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px; /* Atur lebar minimal untuk card */
+    height: 120px; /* Set height untuk keseragaman */
+}
+
+/* Styling angka countdown */
+#countdown .simply-amount {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ecebeb;
+}
+
+/* Styling kata-kata seperti "Hari", "Jam" */
+#countdown .simply-word {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Jarak antar card */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+@media (max-width: 640px) {
+    #countdown .simply-section {
+        /* Memberikan styling pada card yang sudah ada */
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 0px; /* Atur lebar minimal untuk card */
+        height: 0px; /* Set height untuk keseragaman */
+    }
+
+    #countdown .simply-amount {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    /* Styling kata-kata seperti "Hari", "Jam" */
+    #countdown .simply-word {
+        font-size: 0.9rem;
+    }
+
+    #countdown {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 40px 0px;
+        justify-content: center;
+        width: 90%;
+        gap: 1rem;
+    }
+}
