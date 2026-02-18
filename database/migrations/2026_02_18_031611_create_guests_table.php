@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('guests', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('invitation_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('slug'); // Untuk link custom: /budi-wati?to=nama-tamu
+            $table->enum('status', ['pending', 'hadir', 'tidak_hadir'])->default('pending');
+            $table->integer('total_guest')->default(1); // Jumlah orang yang dibawa
+            $table->text('message')->nullable(); // Ucapan/Doa
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('guests');
+    }
+};
